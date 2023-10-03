@@ -39,6 +39,3 @@ This tool uses PyTesseract to parse image snippets in order to identify reroll w
 
 ## Response
 ![Response](https://github.com/0xdreadnaught/le-search/blob/main/response.png)
-
-## Known Issues
-The initial dialog is in the background. after that one is closed out, all future dialogs pop up over the game as intended.
