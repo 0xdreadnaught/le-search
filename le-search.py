@@ -3,6 +3,7 @@ from PIL import ImageGrab
 import pytesseract
 import ctypes
 import subprocess
+import csv
 
 def check_tesseract_installed():
     try:
@@ -10,9 +11,6 @@ def check_tesseract_installed():
     except (subprocess.CalledProcessError, FileNotFoundError):
         print("Tesseract not found. Please install it to proceed.")
         exit(1)
-
-# Check if Tesseract is installed
-check_tesseract_installed()
 
 def get_clipboard_image():
     return ImageGrab.grabclipboard()
@@ -30,10 +28,18 @@ def filter_capitalized_words(text):
 
     return ' '.join(capitalized_words)
 
+def get_reroll_chance(item_name):
+    with open('items.db', mode ='r') as file:
+        csv_reader = csv.reader(file)
+        for row in csv_reader:
+            if row[0].upper() == item_name.upper():
+                return row[1]
+    return None
+
 def show_dialog(text):
-    print("RESULT:")
-    print(text)
-    ctypes.windll.user32.MessageBoxW(0, text, "LE Search Result", 0)
+    #print("RESULT:")
+    #print(text)
+    ctypes.windll.user32.MessageBoxW(0, text, "LE Search Result", 0x1000)
 
 def main():
     image = get_clipboard_image()
@@ -45,9 +51,24 @@ def main():
 
     if text:
         filtered_text = filter_capitalized_words(text)
-        show_dialog(filtered_text)
+        reroll_chance = get_reroll_chance(filtered_text)
+
+        if reroll_chance is not None:
+            if reroll_chance == "0% (Common)":
+                reroll_text = "Nothing special"
+            elif reroll_chance == "–":
+                reroll_text = "No weight assigned"
+            else:
+                reroll_text = f"Reroll Chance: {reroll_chance}"
+
+            show_dialog(f"{filtered_text}\n{reroll_text}")
+        else:
+            show_dialog(f"{filtered_text}\nItem not found in database.")
     else:
         show_dialog("No text found.")
+
+# Check if Tesseract is installed
+check_tesseract_installed()
 
 keyboard.add_hotkey('ctrl+shift+d', main)
 keyboard.wait()
