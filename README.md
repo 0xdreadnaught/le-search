@@ -46,3 +46,6 @@ This tool uses PyTesseract to parse image snippets in order to identify reroll w
 - Windows 11
 - Python 3.11.2
 - Tesseract 5.3.1
+
+## Known Issues
+Items like Isadora's Revenge sometimes gets misread. A new snippet usually fixes it.
