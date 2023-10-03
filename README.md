@@ -1,8 +1,16 @@
 # Last Epoch Reroll Search Tool (le-search)
 
-## Description
-
 This tool uses PyTesseract to parse image snippets in order to identify reroll worthy unique item without having to leave the game.
+
+[![Bandit](https://github.com/0xdreadnaught/le-search/actions/workflows/bandit.yml/badge.svg)](https://github.com/0xdreadnaught/le-search/actions/workflows/bandit.yml)
+
+Tested With:
+```
+- Last Epoch 0.9.2c
+- Windows 11
+- Python 3.11.2
+- Tesseract 5.3.1
+```
 
 ## Installation
 
@@ -40,12 +48,7 @@ This tool uses PyTesseract to parse image snippets in order to identify reroll w
 ## Result
 ![Ressult](https://github.com/0xdreadnaught/le-search/blob/main/result.png)
 
-## Tested With:
 
-- Last Epoch 0.9.2c
-- Windows 11
-- Python 3.11.2
-- Tesseract 5.3.1
 
 ## Known Issues
-Items like Isadora's Revenge sometimes gets misread. A new snippet usually fixes it.
+Items like `Isadora's Revenge` are sometimes misread. A new snippet usually fixes it.
