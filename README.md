@@ -37,8 +37,8 @@ This tool uses PyTesseract to parse image snippets in order to identify reroll w
 ### Bad
 ![Bad Example](https://github.com/0xdreadnaught/le-search/blob/main/badsnippet.png)
 
-## Response
-![Response](https://github.com/0xdreadnaught/le-search/blob/main/response.png)
+## Result
+![Ressult](https://github.com/0xdreadnaught/le-search/blob/main/result.png)
 
 ## Tested With:
 
