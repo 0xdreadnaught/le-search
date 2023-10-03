@@ -33,7 +33,7 @@ def filter_capitalized_words(text):
 def show_dialog(text):
     print("RESULT:")
     print(text)
-    ctypes.windll.user32.MessageBoxW(0, text, "OCR Result", 0)
+    ctypes.windll.user32.MessageBoxW(0, text, "LE Search Result", 0)
 
 def main():
     image = get_clipboard_image()
