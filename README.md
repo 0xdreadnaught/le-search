@@ -31,7 +31,7 @@ This tool uses PyTesseract to parse image snippets in order to identify reroll w
 3. Press Ctrl+Shift+D to activate the tool.
 4. A dialog box will appear showing the search result.
 
-## Exmaple Snippet
+## Example Snippet
 ### Good
 ![Good Example](https://github.com/0xdreadnaught/le-search/blob/main/goodsnippet.png)
 ### Bad
