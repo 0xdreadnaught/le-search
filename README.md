@@ -6,7 +6,7 @@ This tool uses PyTesseract to parse image snippets in order to identify reroll w
 
 Tested With:
 ```
-- Last Epoch 0.9.2c
+- Last Epoch 0.9.2f
 - Windows 11
 - Python 3.11.2
 - Tesseract 5.3.1
